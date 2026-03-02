@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Redes de Computadores</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Redes de Computadores</h1>
+    <p>Conceitos Básicos</p>
+</header>
+
+<section>
+    <h2>O que é uma Rede?</h2>
+    <div class="card">
+        Uma rede de computadores é um conjunto de dispositivos conectados para compartilhar dados e recursos.
+    </div>
+
+    <h2>Tipos de Rede</h2>
+    <div class="card"><strong>LAN:</strong> Uma rede LAN (Local Area Network ou Rede de Área Local) conecta computadores, dispositivos móveis, impressoras e servidores em uma área geográfica restrita, como uma casa, escritório ou campus. Ela permite o compartilhamento de recursos, arquivos e internet com alta velocidade, utilizando cabos (Ethernet) ou sem fio (Wi-Fi/WLAN).</div>
+    <div class="card"><strong>MAN:</strong> Uma rede MAN (Metropolitan Area Network), ou rede de área metropolitana, interconecta computadores e dispositivos LAN (locais) em uma área geográfica específica, como uma cidade ou campus grande, abrangendo de 5 a 100 km.</div>
+    <div class="card"><strong>WAN:</strong> Uma rede WAN (Wide Area Network ou Rede de Longa Distância) conecta computadores e LANs (redes locais) através de grandes distâncias geográficas, abrangendo cidades, países ou o globo, sendo a Internet o maior exemplo. Utiliza tecnologias como fibra ótica, MPLS, satélites e SD-WAN para interligar filiais, datacenters e usuários remotos.</div>
+</section>
+
+<section>
+    <h2>Quiz</h2>
+
+    <div class="quiz">
+        <p>1) O que significa LAN?</p>
+        <input type="radio" name="q1" value="c"> Local Area Network<br>
+        <input type="radio" name="q1" value="b"> Long Area Network<br>
+        <input type="radio" name="q1" value="a"> Long Area Network<br>
+
+        <p>2) Qual dispositivo distribui internet para vários aparelhos?</p>
+        <input type="radio" name="q2" value="b"> Roteador<br>
+        <input type="radio" name="q2" value="a"> Monitor<br>
+
+        <p>3) A internet é exemplo de qual tipo de rede?</p>
+        <input type="radio" name="q3" value="c"> WAN<br>
+        <input type="radio" name="q3" value="a"> LAN<br>
+
+        <button onclick="verificarQuiz()">Ver Resultado</button>
+        <p id="resultado"></p>
+    </div>
+</section>
+
+<section class="feedback">
+    <h2>Feedback</h2>
+
+    <form onsubmit="salvarFeedback(event)">
+        <input type="text" id="nome" placeholder="Seu nome" required>
+        <textarea id="mensagem" placeholder="Seu comentário" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div class="lista-feedback">
+        <h3>Comentários:</h3>
+        <ul id="feedbacks"></ul>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

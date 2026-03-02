@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    color: #333;
+}
+
+header {
+    background: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    color: #0d47a1;
+    margin-bottom: 15px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.quiz {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+button {
+    margin-top: 15px;
+    padding: 8px 15px;
+    border: none;
+    background: #0d47a1;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1565c0;
+}
+
+.feedback form {
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback input,
+.feedback textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.lista-feedback {
+    margin-top: 20px;
+}
+
+.lista-feedback li {
+    background: white;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+footer {
+    background: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+}
