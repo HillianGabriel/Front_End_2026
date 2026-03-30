@@ -1,71 +1,105 @@
 const cria = document.getElementById("main");
-const btn = document.getElementById("btn");
+const barraFome = document.getElementById("barra-fome");
+const barraFeliz = document.getElementById("barra-feliz");
+const petNameInput = document.getElementById("pet-name");
 
 const estados = {
-    normal:  "./imagens/coelhofeliz.png",
+    normal: "./imagens/coelhofeliz.png",
     puto: "./imagens/coelhoraivoso.png",
     morto: "./imagens/morto.png",
-    comendo: "./imagens/coelhocomendo.png",
-    alimentado: "./imagens/",  
+    comendo: "./imagens/coelhocomendo.png"
 };
 
-let contador = 0;
-let intervalo = null;
-let timeClick = null;
-let timeOut = null;
+let status = {
+    fome: 100,
+    felicidade: 100,
+    vivo: true
+};
 
-function controlador (){
-    if(intervalo) clearInterval(intervalo)
-        
-        intervalo = setInterval(() => {
-            contador++;
+function loopPrincipal() {
+    setInterval(() => {
+        if (!status.vivo) return;
 
-            console.log("tempo:",contador);
-            
-            if (contador == 30){
-                cria.src = estados.puto;
-            }
+        status.fome -= 1.5;
+        status.felicidade -= 1;
 
-            if(contador == 60){
-                cria.src = estados.morto;
-                clearInterval(intervalo);
-            }
-        }, 1000);
+        atualizarInterface();
+        checarEstado();
+    }, 1000);
 }
 
-function alimentando(){
-    cria.src = estados.comendo;
-    contador = 0;
-    console.log("alimentando");
-
-    if(timeClick) clearInterval(timeClick);;
-
-    timeClick = setTimeout(() => {
-        cria.src = estados.comendo;
-        timeOut = setTimeout(() => {
-            cria.src = estados.normal;
-        }, 2000);
-    }, 5000);
+function atualizarInterface() {
+    barraFome.value = status.fome;
+    barraFeliz.value = status.felicidade;
 }
 
-controlador();
-
-function mudarClima() {
-    const checkbox = document.getElementById("theme-toggle");
-    const html = document.documentElement; // Pega a tag <html>
-    const corpo = document.body;
-
-    if (checkbox.checked) {
-        // DIA
-        html.setAttribute("data-theme", "cupcake"); // Tema fofinho e claro
-        corpo.style.backgroundImage = "url('./imagens/fundo.png')";
-        console.log("Bom dia!");
+function checarEstado() {
+    if (status.fome <= 0 || status.felicidade <= 0) {
+        morrer();
+    } else if (status.fome < 40 || status.felicidade < 40) {
+        cria.src = estados.puto;
     } else {
-        // NOITE
-        html.setAttribute("data-theme", "dracula"); // Tema escuro
-        corpo.style.backgroundImage = "url('./imagens/noite.png')";
-        console.log("Boa noite!");
+        if (!cria.src.includes('comendo')) {
+            cria.src = estados.normal;
+        }
     }
 }
 
-window.onload = mudarClima;
+function alimentando() {
+    if (!status.vivo) return;
+    
+    status.fome = Math.min(100, status.fome + 25);
+    cria.src = estados.comendo;
+    cria.classList.remove('pet-bounce');
+
+    setTimeout(() => {
+        cria.classList.add('pet-bounce');
+        checarEstado();
+    }, 2000);
+}
+
+function brincar() {
+    if (!status.vivo) return;
+
+    status.felicidade = Math.min(100, status.felicidade + 30);
+    status.fome -= 5;
+    
+    cria.style.transform = "rotate(360deg) scale(1.2)";
+    setTimeout(() => {
+        cria.style.transform = "";
+        checarEstado();
+    }, 500);
+}
+
+function morrer() {
+    status.vivo = false;
+    cria.src = estados.morto;
+    cria.classList.remove('pet-bounce');
+    alert("Ah não! Seu pet não resistiu.");
+}
+
+function mudarClima() {
+    const checkbox = document.getElementById("theme-toggle");
+    const html = document.documentElement;
+    const corpo = document.body;
+
+    if (checkbox.checked) {
+        html.setAttribute("data-theme", "cupcake");
+        corpo.className = "min-h-screen flex flex-col items-center justify-center p-4 tema-dia";
+    } else {
+        html.setAttribute("data-theme", "dracula");
+        corpo.className = "min-h-screen flex flex-col items-center justify-center p-4 tema-noite";
+    }
+}
+
+function salvarNome() {
+    localStorage.setItem('petNome', petNameInput.value);
+}
+
+window.onload = () => {
+    const nomeSalvo = localStorage.getItem('petNome');
+    if (nomeSalvo) petNameInput.value = nomeSalvo;
+
+    mudarClima();
+    loopPrincipal();
+};
