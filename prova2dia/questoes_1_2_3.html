@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa do Mundo 2026 - Grupos</title>
+
+    <!-- QUESTÃO 02: CSS interno aplicado à página -->
+    <style>
+        /* Variáveis de cor */
+        :root {
+            --bg-color: #eaf4fb;
+            --header-bg: #1a3a5c;
+            --card-bg: #ffffff;
+            --accent: #2980b9;
+            --accent2: #27ae60;
+            --text: #2c3e50;
+            --light-text: #ffffff;
+            --border-color: #b0d4ef;
+            --details-bg: #f0f8e8;
+        }
+
+        /* Reset básico */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);  /* cor de fundo suave */
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Cabeçalho centralizado */
+        header {
+            text-align: center;
+            background-color: var(--header-bg);
+            color: var(--light-text);
+            padding: 30px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 3px solid var(--accent);
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 0.95em;
+            color: #a8c8e8;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* Wrapper dos grupos com flex */
+        .grupos-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        /* Cartões de grupo — destaque da página */
+        .grupo-card {
+            background-color: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            width: 280px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .grupo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+        }
+
+        .grupo-card h2 {
+            font-size: 1.3em;
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+            margin-bottom: 14px;
+        }
+
+        .grupo-card h3 {
+            font-size: 0.95em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .grupo-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 16px;
+        }
+
+        .grupo-card ul li {
+            padding: 5px 0 5px 12px;
+            border-left: 3px solid var(--accent2);
+            margin-bottom: 4px;
+            font-size: 0.95em;
+            color: var(--text);
+        }
+
+        /* Tag details — Saiba Mais */
+        details {
+            background-color: var(--details-bg);
+            border: 1px solid #c3e6a0;
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #2d5a1b;
+        }
+
+        details summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--accent2);
+            user-select: none;
+        }
+
+        details summary:hover {
+            text-decoration: underline;
+        }
+
+        details p {
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        /* Botão Próximo */
+        .btn-proximo {
+            display: block;
+            margin: 10px auto 30px auto;
+            padding: 12px 36px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05em;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-proximo:hover {
+            background-color: #1f6494;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #888;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Cabeçalho centralizado (Q2) -->
+        <header>
+            <h1>⚽ Copa do Mundo 2026 — Grupos</h1>
+            <p>Fase de Grupos — Edição FIFA World Cup 2026</p>
+        </header>
+
+        <!-- QUESTÃO 01: estrutura com div, h1-h6, ul/li, details -->
+
+        <!-- Wrapper flex dos grupos (Q2) -->
+        <div class="grupos-wrapper" id="grupos-container">
+
+            <!-- Grupo A -->
+            <div class="grupo-card" id="grupo-a">
+                <h2>🅰️ Grupo A</h2>
+                <h3>Seleções</h3>
+                <ul>
+                    <li>México</li>
+                    <li>África do Sul</li>
+                    <li>Coreia do Sul</li>
+                    <li>República Tcheca</li>
+                </ul>
+                <details>
+                    <summary>Saiba Mais</summary>
+                    <p>O jogo de abertura será México x África do Sul. Confrontos entre Coreia do Sul e seleções europeias já ocorreram em várias Copas, com histórico equilibrado.</p>
+                </details>
+            </div>
+
+            <!-- Grupo B -->
+            <div class="grupo-card" id="grupo-b">
+                <h2>🅱️ Grupo B</h2>
+                <h3>Seleções</h3>
+                <ul>
+                    <li>Canadá</li>
+                    <li>Suíça</li>
+                    <li>Catar</li>
+                    <li>Vaga Europeia (Bósnia)</li>
+                </ul>
+                <details>
+                    <summary>Saiba Mais</summary>
+                    <p>O Canadá joga em casa, fator importante de desempenho. Catar e Suíça já se enfrentaram recentemente em amistosos internacionais.</p>
+                </details>
+            </div>
+
+            <!-- Grupo C -->
+            <div class="grupo-card" id="grupo-c">
+                <h2>🅲 Grupo C</h2>
+                <h3>Seleções</h3>
+                <ul>
+                    <li>Brasil</li>
+                    <li>Marrocos</li>
+                    <li>Haiti</li>
+                    <li>Escócia</li>
+                </ul>
+                <details>
+                    <summary>Saiba Mais</summary>
+                    <p>Brasil, Marrocos e Escócia já dividiram grupo em 1998. Brasil nunca perdeu para a Escócia em Copas.</p>
+                </details>
+            </div>
+
+        </div><!-- fim grupos-wrapper -->
+
+        <!-- QUESTÃO 03: botão "Próximo" com onclick -->
+        <button class="btn-proximo" onclick="proximoGrupo()">Próximo</button>
+
+        <footer>
+            &copy; 2026 — Copa do Mundo FIFA | Avaliação FrontEnd
+        </footer>
+
+    </div><!-- fim container -->
+
+
+    <!-- QUESTÃO 03: Script JavaScript para alternar grupos -->
+    <script>
+        // Dados dos dois conjuntos de grupos
+        const conjuntos = [
+            // Conjunto 1 — Grupos A, B, C (estado inicial)
+            [
+                {
+                    id: "grupo-a",
+                    titulo: "🅰️ Grupo A",
+                    selecoes: ["México", "África do Sul", "Coreia do Sul", "República Tcheca"],
+                    fatos: "O jogo de abertura será México x África do Sul. Confrontos entre Coreia do Sul e seleções europeias já ocorreram em várias Copas, com histórico equilibrado."
+                },
+                {
+                    id: "grupo-b",
+                    titulo: "🅱️ Grupo B",
+                    selecoes: ["Canadá", "Suíça", "Catar", "Vaga Europeia (Bósnia)"],
+                    fatos: "O Canadá joga em casa, fator importante de desempenho. Catar e Suíça já se enfrentaram recentemente em amistosos internacionais."
+                },
+                {
+                    id: "grupo-c",
+                    titulo: "🅲 Grupo C",
+                    selecoes: ["Brasil", "Marrocos", "Haiti", "Escócia"],
+                    fatos: "Brasil, Marrocos e Escócia já dividiram grupo em 1998. Brasil nunca perdeu para a Escócia em Copas."
+                }
+            ],
+            // Conjunto 2 — Grupos D, E, F
+            [
+                {
+                    id: "grupo-d",
+                    titulo: "🅳 Grupo D",
+                    selecoes: ["Estados Unidos", "Paraguai", "Austrália", "Turquia"],
+                    fatos: "Os EUA jogam em casa, vantagem histórica em Copas. Austrália enfrenta frequentemente seleções sul-americanas em torneios."
+                },
+                {
+                    id: "grupo-e",
+                    titulo: "🅴 Grupo E",
+                    selecoes: ["Alemanha", "Equador", "Costa do Marfim", "Curaçao"],
+                    fatos: "Alemanha costuma dominar fases de grupos. Equador e Costa do Marfim têm estilos físicos semelhantes."
+                },
+                {
+                    id: "grupo-f",
+                    titulo: "🅵 Grupo F",
+                    selecoes: ["Holanda", "Japão", "Tunísia", "Suécia"],
+                    fatos: "Holanda e Japão se enfrentaram em edições memoráveis. Tunísia e Suécia trazem estilos táticos distintos ao grupo."
+                }
+            ]
+        ];
+
+        let conjuntoAtual = 0; // controla qual conjunto está visível
+
+        function proximoGrupo() {
+            // Alterna entre os dois conjuntos
+            conjuntoAtual = (conjuntoAtual + 1) % conjuntos.length;
+            const wrapper = document.getElementById("grupos-container");
+            const grupos = conjuntos[conjuntoAtual];
+
+            // Limpa os cards existentes
+            wrapper.innerHTML = "";
+
+            // Recria os cards com os novos dados, mantendo estrutura e estilo
+            grupos.forEach(function(grupo) {
+                // Monta os <li> das seleções
+                const itens = grupo.selecoes.map(function(s) {
+                    return "<li>" + s + "</li>";
+                }).join("");
+
+                // Cria o HTML do card
+                const card = document.createElement("div");
+                card.className = "grupo-card";
+                card.id = grupo.id;
+                card.innerHTML =
+                    "<h2>" + grupo.titulo + "</h2>" +
+                    "<h3>Seleções</h3>" +
+                    "<ul>" + itens + "</ul>" +
+                    "<details>" +
+                    "  <summary>Saiba Mais</summary>" +
+                    "  <p>" + grupo.fatos + "</p>" +
+                    "</details>";
+
+                wrapper.appendChild(card);
+            });
+        }
+    </script>
+
+</body>
+</html>
