@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resposta da Prova - Copa 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Informações sobre a Copa do Mundo 2026</h1>
+            <p>Uma página estruturada usando HTML, CSS externo e JavaScript.</p>
+        </header>
+
+        <nav class="main-nav">
+            <a href="#organizacao">Organização</a>
+            <a href="#formato">Novo Formato</a>
+            <a href="#impacto">Impacto</a>
+            <a href="#tabela">Tabela de Jogos</a>
+        </nav>
+
+        <section id="organizacao" class="feature-section">
+            <h2>Organização e Sedes</h2>
+            <p>A Copa do Mundo FIFA de 2026 será a primeira edição realizada em três países: Estados Unidos, Canadá e México.</p>
+            <p>Essa será também a maior Copa da história em número de cidades-sede, com partidas distribuídas por diversas regiões da América do Norte, ampliando o alcance global do torneio.</p>
+        </section>
+
+        <section id="formato" class="feature-section">
+            <h2>Novo Formato</h2>
+            <p>O torneio contará com 48 seleções, em vez das tradicionais 32.</p>
+            <p>As equipes serão divididas em grupos, aumentando o número total de jogos e dando mais oportunidades para países de diferentes continentes participarem.</p>
+            <p>Essa mudança foi promovida pela FIFA para tornar a competição mais inclusiva e competitiva.</p>
+        </section>
+
+        <section id="impacto" class="feature-section">
+            <h2>Expectativas e Impacto</h2>
+            <p>A edição de 2026 promete ser uma das mais assistidas da história, com grande impacto econômico e cultural nos países-sede.</p>
+            <p>Além disso, seleções tradicionais e emergentes devem protagonizar jogos de alto nível, aumentando ainda mais o interesse global pelo futebol e fortalecendo o esporte em novas regiões.</p>
+        </section>
+
+        <section id="tabela" class="feature-section">
+            <h2>Tabela de Jogos</h2>
+            <p>Ao clicar no botão abaixo, a tabela de jogos será adicionada dinamicamente à página.</p>
+            <div class="button-row">
+                <button id="show-table-btn" class="action-btn" onclick="mostrarTabelaJogos()">Mostrar Tabela de Jogos</button>
+            </div>
+            <div id="tabela-jogos-container"></div>
+        </section>
+
+        <footer>
+            © 2026 - Resposta da Prova FrontEnd
+        </footer>
+    </div>
+    <script src="prova.js"></script>
+</body>
+</html>
