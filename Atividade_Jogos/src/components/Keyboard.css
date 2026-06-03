@@ -1,1 +1,57 @@
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1rem;
+}
 
+.keyboard-row {
+  display: flex;
+  gap: 5px;
+}
+
+.key {
+  min-width: 38px;
+  height: 46px;
+  padding: 0 6px;
+  border: 1px solid #d3d1c7;
+  border-radius: 4px;
+  background-color: #d3d1c7;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #2c2c2a;
+  transition: background-color 0.2s;
+}
+
+.key.wide {
+  min-width: 58px;
+  font-size: 12px;
+}
+
+.key:hover {
+  filter: brightness(0.9);
+}
+
+.key:active {
+  transform: scale(0.95);
+}
+
+.key.correct {
+  background-color: #3b6d11;
+  border-color: #3b6d11;
+  color: #eaf3de;
+}
+
+.key.present {
+  background-color: #854f0b;
+  border-color: #854f0b;
+  color: #faeeda;
+}
+
+.key.absent {
+  background-color: #888780;
+  border-color: #888780;
+  color: #f1efe8;
+}
